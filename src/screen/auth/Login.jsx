@@ -1,7 +1,32 @@
+import axios from "axios";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Login = () => {
+
+  function handleLogin(e){
+    e.preventDefault()
+
+    let email = e.target.email.value;
+    let password = e.target.password.value;
+
+    let dataLogin = {
+      email, password
+    }
+
+    authLogin(dataLogin)
+
+  }
+
+  async function authLogin(data){
+    try {
+        const result = await axios.post("http://localhost:3888/api/login", data)   
+        console.log(result)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className="w-full h-screen bg-slate-100 flex flex-col items-center pt-6">
       <h1 className="text-xl font-bold text-slate-600">
@@ -15,7 +40,7 @@ const Login = () => {
           FORM LOGIN
         </h1>
 
-        <form className="w-full h-full p-4">
+        <form className="w-full h-full p-4" onSubmit={handleLogin}>
           <div className="flex flex-col gap-2">
             <label htmlFor="email">Email</label>
             <input
@@ -29,6 +54,7 @@ const Login = () => {
             <label htmlFor="password">Password</label>
             <input
               type="password"
+              id="password"
               className="bg-white border border-slate-400 h-8 rounded-md p-2"
             />
           </div>
