@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Login = () => {
+const Login = ({onLogin}) => {
 
   function handleLogin(e){
     e.preventDefault()
@@ -21,9 +21,13 @@ const Login = () => {
   async function authLogin(data){
     try {
         const result = await axios.post("http://localhost:3888/api/login", data)   
-        console.log(result)
+        sessionStorage.setItem("token", result.data.token)
+        onLogin()
     } catch (error) {
-      console.log(error)
+      if(error){
+        return alert(error.response.data.message)
+      }
+      console.log(error.response.data.message)
     }
   }
 
