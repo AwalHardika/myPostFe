@@ -17,7 +17,7 @@ const Navigation = () => {
       </div>
 
       <div className={`flex-1 h-full flex justify-center items-center  bg-white border border-r-slate-500`}>
-        <NavLink to={"/myPost"}>
+        <NavLink to={"/my_post"}>
           <div className="flex flex-col items-center">
             <AiFillRead className="fill-blue-500 text-2xl" />
             <h1 className="text-blue-500">My Post</h1>

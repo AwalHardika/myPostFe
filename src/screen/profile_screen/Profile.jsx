@@ -36,9 +36,8 @@ const Profile = ({onLogout}) => {
   return (
     <div>
         <h1>Profile</h1>
-
-        <h1>Nama : {data.nama}</h1>
-        <h1>Email : {data.email}</h1>
+        <h1>Nama : {data?.nama}</h1>
+        <h1>Email : {data?.email}</h1>
         <button className='bg-red-500 text-white px-2 py-1' onClick={handleLogout}>Logout</button>
     </div>
   )

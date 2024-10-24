@@ -6,6 +6,8 @@ import HomeScreen from "./screen/home_screen/HomeScreen";
 import Layout from "./screen/Layout";
 import generateToken from "./utils/generateToken";
 import Profile from "./screen/profile_screen/Profile";
+import MyPost from "./screen/my_post/MyPost";
+import { jwtDecode } from "jwt-decode";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -42,6 +44,7 @@ const App = () => {
       <Route path="/" element={<Layout/>}>
       <Route index element={<HomeScreen />} />
       <Route path="/profile" element={<Profile onLogout={()=>setIsLogin(false)}/>}/>
+      <Route path="/my_post" element={<MyPost/>} />
       <Route path="*" element={<h1>Page Not Found</h1>} />
       </Route>
     </Routes>

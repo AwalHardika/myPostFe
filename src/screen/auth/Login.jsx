@@ -39,7 +39,7 @@ const Login = ({onLogin}) => {
       <h1 className="mt-4 text-sm font-medium text-blue-500">
         Silahkan login terlebih dahulu
       </h1>
-      <div className="w-[80%] h-[45%] bg-white rounded-lg shadow-lg mt-4">
+      <div className="w-[80%] h-auto py-4 bg-white rounded-lg shadow-lg mt-4">
         <h1 className="text-center text-blue-500 font-semibold mt-4">
           FORM LOGIN
         </h1>
